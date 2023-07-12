@@ -19,9 +19,9 @@ export class AppController {
     @Param('type') type: string
   ) {
     const reportType = type === 'income' ? ReportType.Income : ReportType.Expense;
-    return data.report.filter((report) => 
-      report.type === reportType)
-        .find((report) => report.id === id);
+    return data.report
+      .filter((report) => report.type === reportType)
+      .find((report) => report.id === id);
   }
 
   @Post()
